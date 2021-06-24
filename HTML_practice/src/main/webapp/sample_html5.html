@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>
+		<h3>HTML5 FORM</h3>
+		<h1>[회원가입]</h1>
+		<form action="result.html" method="get">
+			<table border="1" >
+				<tr>
+					<td> 아이디 </td>
+					<td>
+						<input type="text" name="memberId" autofocus="autofocus" required="required" 
+						placeholder="영문/숫자 조합 6~30자리" pattern="[A-Za-z0-9@.]{6,30}" style="width:210px;">
+						<input type="button" value="중복확인">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 비밀번호 </td>
+					<td> 
+						<input type="password" name="memberPw" required="required"
+						placeholder="영문/숫자/특수문자 조합 6~30자리" style="width:210px;">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 비밀번호 확인 </td>
+					<td> 
+						<input type="password" name="memberPwValidation" required="required"
+						placeholder="영문/숫자/특수문자 조합 6~30자리" style="width:210px;">
+						<input type="checkbox" name="showvalidationPw" value="비밀번호 보기">
+						<label for="showValidationPw"> 비밀번호 보기</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 이름 </td>
+					<td>
+						<input type="text" name="name" required="required" style="width:210px;">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 이메일 </td>
+					<td>
+						<input type="text" name="emailFirst" required="required" style="width:210px;">
+						@
+						<input type="text" name="emailSecond" required="required" style="width:100px;">
+						<select>
+							<option>직접입력</option>
+							<option>gmail</option>
+							<option>naver</option>
+							<option>hanmail</option>
+							<option>empal</option>
+							<option>hotmail</option>
+						</select>
+						<input type="button" value="중복확인">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 연락처 </td>
+					<td>
+						<input type="number" name="contact" required="required" style="width:240px;" placeholder="숫자만 입력하세요(ex. 01063886503)"><br>
+						인증번호&nbsp;<input type="text" name="code" required="required" size="5">
+						<input type="button" value="인증번호 확인">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 테스트 : 날짜 </td>
+					<td>
+						<input placeholder="생년월일(날짜)" type="date" name="birthday" 
+						value="2021-05-17" style="width:240px;">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 테스트 : 숫자 </td>
+					<td>
+						<input placeholder="슛자" type="number" name="test2" 
+						min="2" max="10" step="2" style="width:240px;">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 테스트 : 다중 파일 </td>
+					<td>
+						<input placeholder="파일" type="file" name="test3" multiple="multiple" style="width:240px;">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 테스트 : 단일 파일 </td>
+					<td>
+						<input placeholder="파일" type="file" name="test4" style="width:240px;">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 테스트 : 전화번호(패턴) </td>
+					<td>
+						<input type="mobile" name="mobile" required="required" style="width:240px;"
+						placeholder="010-1234-1234" pattern="(010|02|031|041)-\d{3,4}-\d{4}">
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="회원가입">
+						<input type="reset" value="취소">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
