@@ -16,17 +16,76 @@
 		<a href="findMember.html">아이디/비밀번호찾기</a>
 		
 		<h1>[회원가입]</h1>
+		<h1>[회원가입]</h1>
 		<form action="result.html" method="post">
-			이름 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name"><br>
-			아이디 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="memberId"><br>
-			비밀번호 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="memberPw"><br>
-			비밀번호 확인 : <input type="password" name="memberPwValidation"><br>
-			이메일 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="email">
-			<input type="button" value="중복확인"><br>
-			연락처 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="contact"><p>
-			
-			<input type="submit" value="회원가입">
-			<input type="reset" value="취소">
+			<table border="1" cellspacing="0px" cellpadding="5px">
+				<tr>
+					<td> 아이디 </td>
+					<td>
+						<input type="text" name="memberId">
+						<input type="button" value="중복확인">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 비밀번호 </td>
+					<td> 
+						<input type="password" name="memberPw">
+						<input type="checkbox" name="showPw" value="비밀번호 보기">
+						<label for="showPw"> 비밀번호 보기</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 비밀번호 확인 </td>
+					<td> 
+						<input type="password" name="memberPwValidation">
+						<input type="checkbox" name="showvalidationPw" value="비밀번호 보기">
+						<label for="showValidationPw"> 비밀번호 보기</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 이름 </td>
+					<td>
+						<input type="text" name="name">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 이메일 </td>
+					<td>
+						<input type="text" name="emailFirst">
+						@
+						<input type="text" name="emailSecond">
+						<select>
+							<option>직접입력</option>
+							<option>gmail</option>
+							<option>naver</option>
+							<option>hanmail</option>
+							<option>empal</option>
+							<option>hotmail</option>
+						</select>
+						<input type="button" value="중복확인">
+					</td>
+				</tr>
+				
+				<tr>
+					<td> 연락처 </td>
+					<td>
+						<input type="text" name="contact"><br>
+						인증번호&nbsp;<input type="text" name="code" width="3px">
+						<input type="button" value="인증번호 확인">
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="회원가입">
+						<input type="reset" value="취소">
+					</td>
+				</tr>
+			</table>
 		</form>
 	</body>
 </html>
