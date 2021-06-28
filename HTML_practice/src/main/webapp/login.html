@@ -15,6 +15,47 @@
 		
 		<!-- 문서(document 제목, 즐겨찾기시에 기본 텍스트 -->
 		<title>로그인 | MMS</title>
+		
+		<!--  css : external -->
+		<link type="text/css" rel="stylesheet" href="css/common_form.css">
+		
+		<!--  css: internal -->
+		<style type="text/css">
+			table, tr, td, th {
+				border: solid 1px orange;
+				margin : 5px;
+				padding: 5px;
+			}
+			
+			div.top_menu {
+				text-align: right;	
+			}
+			
+			div.top_menu a {
+				text-decoration: none;
+				font-size: 11px;
+			}
+		
+			span.seperator {
+				margin: 0 3px;
+				font-size: 0.7em;
+				color: orange;
+			}
+			
+			a.color {
+				color: orange;
+			}
+			
+			a.bold {
+				font-weight: bold;
+			}
+			
+			a:link {text-decoration: none;}
+			a:active {text-decoration: underline; color: red;}
+			a:visited {text-decoration: none; color: gray;}
+			a:hover {text-decoration: none; background-color: yellow; color: red;}
+			
+		</style>
 	</head>
 	
 	<!-- 브라우저에 서비스(보여지는) 내용 -->
@@ -30,7 +71,7 @@
 		<h1>[로그인]</h1>
 		
 		<form action="result.html" method="post">
-			<table border="1" cellspacing="0px" cellpadding="5px">
+			<table class="form_table">
 				<tr>
 					<td> 아이디 </td>
 					<td><input type="text" name="memberId"></td>
@@ -38,17 +79,18 @@
 				
 				<tr>
 					<td> 비밀번호 </td>
-					<td> <input type="password" name="memberPw"></td>
+					<td> <input type="password" name="memberPw" class="test_area"></td>
 				</tr>
 				
 				<tr>
 					<td colspan="2" align="center">
-						<input type="submit" value="로그인">
-						<input type="reset" value="취소">
+						<input type="submit" value="로그인" class="btn_submit normal">
+						<input type="reset" value="취소" class="normal">
 					</td>
 				</tr>
 				
 			</table>
 		</form>
+		
 	</body>
 </html>
