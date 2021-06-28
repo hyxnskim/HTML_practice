@@ -4,6 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>아이디/비밀번호 찾기 | MMS</title>
+		<link type="text/css" rel="stylesheet" href="css/common_form.css">
 	</head>
 	
 	<body>
@@ -19,76 +20,55 @@
 		
 		<h4>아이디 찾기</h4>
 		<form action="result.html" method="post">
-			<table border="1" cellspacing="0px" cellpadding="5px">
-				<tr>
-					<td> 이름 </td>
-					<td>
-						<input type="text" name="name">
-					</td>
-				</tr>
-				
-				<tr>
-					<td> 이메일 </td>
-					<td>
-						<input type="text" name="email">
-					</td>
-				</tr>
-				
-				<tr>
-					<td> 연락처 </td>
-					<td>
-						<input type="text" name="contact">
-					</td>
-				</tr>
-				
-				<tr>
-					<td colspan="2" align="center">
-						<input type="submit" value="아이디 찾기">
-						<input type="reset" value="취소">
-					</td>
-				</tr>
-			</table>
+			<div>
+			<span class="input_table">이름</span>
+			<input type="text" name="name">
+			</div>
+			
+			<div>
+			<span class="input_table">이메일</span>
+			<input type="text" name="email">
+			</div>
+			
+			<div>
+			<span class="input_table">연락처</span> 
+			<input type="text" name="contact">
+			</div>
+			
+			<div>
+			<input type="submit" value="아이디 찾기">
+			<input type="reset" value="취소">
+			</div>
 		</form>
 		
 		<hr>
 		<h4>비밀번호 찾기</h4>
 		<form action="result.html" method="post">
-			<table border="1" cellspacing="0px" cellpadding="5px">
-				<tr>
-					<td> 아이디 </td>
-					<td>
-						<input type="text" name="memberId">
-					</td>
-				</tr>
-				
-				<tr>
-					<td> 이름 </td>
-					<td>
-						<input type="text" name="name">
-					</td>
-				</tr>
-				
-				<tr>
-					<td> 이메일 </td>
-					<td>
-						<input type="text" name="email">
-					</td>
-				</tr>
-				
-				<tr>
-					<td> 연락처 </td>
-					<td>
-						<input type="text" name="contact">
-					</td>
-				</tr>
-				
-				<tr>
-					<td colspan="2" align="center">
-						<input type="submit" value="비밀번호 찾기">
-						<input type="reset" value="취소">
-					</td>
-				</tr>
-			</table>
+			<div>
+				<span class="input_table">아이디</span>
+				<input type="text" name="memberId">
+			
+			</div>
+			
+			<div>
+				<span class="input_table">이름</span>
+				<input type="text" name="name">
+			</div>
+	
+			<div>
+				<span class="input_table">이메일</span>
+				<input type="text" name="email">
+			</div>
+			
+			<div>
+				<span class="input_table">연락처</span>
+				<input type="text" name="contact">
+			</div>
+			
+			<div>
+				<input type="submit" value="비밀번호 찾기">
+				<input type="reset" value="취소">
+			</div>			
 		</form>
 	</body>
 </html>
