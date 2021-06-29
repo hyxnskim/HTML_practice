@@ -2,79 +2,95 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Window 내장함수</title>
-		<!--  js : internal -->
+		<title>User Function</title>
+		<!-- css : internal -->
+		<style type="text/css">
+			table, tr, td, th{
+				border : solid 1px;
+			}
+		</style>
+		
 		<script type="text/javascript">
-			/* 사용자 주문수량 입력받아서 주문내역 출력
-			   상품 가격 : 10,000
-			   주문 수량 : 1 ~ 10개 제한
-			   
-			   # 사용기술(함수)
-			   -- 변수 선언, 주문수량 입력, 주문수량 데이터 검증, 동적 화면 출력 제어, 연산자, 정수형변환
-			   -- prompt()
-			   -- isNaN()
-			   -- parseInt()
-			   -- alert()
-			   -- confirm()
-			   
-			   # 체킹사항
-			   -- 주문수량 데이터 검증
-			   1. 입력여부
-			   2. 숫자데이터 여부
-			   3. 데이터 범위 : 1 ~ 10 => 숫자데이터 형변환
-			   4. 주문내역 보여주기
-			   5. 최종 주문여부 확인
-			   6. 주문처리
-			   7. 주문취소처리
+			/* 함수 선언 */
+			function hello() {
+				document.write("<h3>안녕</h3>")
+			}
+		
+			/* 
+				2개의 숫자 데이터를 입력받아서 시작단 ~ 종료단까지의 구구단 출력 함수
+				-- 테이블로 보여주기
 			*/
-			
-			document.write("<h3>주문화면</h3>");
-			   
-			var price = 10000;
-			
-			while(true){
-				var quantity = prompt("주문 수량을 입력하세요 (1 ~ 10)", 0);
-				console.log("주문수량 : " + quantity);
-				console.log("데이터타입 : " + typeof quantity)
+			function gugudan(start, end){
 				
-				if(quantity == null){
-					alert("주문 취소");
-					break;
-				} else if(quantity == "") {
-					alert("주문 수량을 입력해주세요");
-				} else if(isNaN(quantity)) {
-					alert("숫자를 입력해주세요");
-				} else {
-					var num_quantity = parseInt(quantity);
-					if(num_quantity<1 || num_quantity>10){
-						alert("1~10 사이의 숫자를 입력해주세요")
-					} else {
-						//break;
-						var message;
-						message = "주문내역정보"
-						message += "\n-------------------------------"
-						message += "\n상품가격 : " + price
-						message += "\n주문수량 : " + num_quantity;
-						message += "\n주문총액 : " + num_quantity * price
-						message += "\n-------------------------------"
-						
-						var isConfirmed = confirm(message + "\n\n주문하시겠습니까?")
-						if(isConfirmed){
-							document.write("<h3>주문 내역</h3>");
-							alert("주문이 완료되었습니다.")
-							document.write("주문수량 : " + num_quantity);
-							document.write("\n가격 : " + num_quantity * price);
-						} else {
-							alert("주문이 취소되었습니다.");
-						}
-					}
-					break;
+				if(start > end){
+					i = start;
+					start = end;
+					end = i;
 				}
+				
+				document.write("<table>");
+				document.write("<caption>구구단</caption>");
+				
+				// 제목행
+				document.write("<tr>");
+				for(dan = start; dan <= end; dan++){
+					document.write("<th>" + dan + "단</th>");
+				}
+				document.write("</tr>");
+				
+				// 구구단 수행 반복
+				for(step = 1; step <= 9; step++){
+					document.write("<tr>")
+					for(dan = start; dan <= end; dan++){
+						document.write("<td>" + dan + " * " + step + " = " + dan*step + "</td>")
+					}
+					document.write("</tr>");
+				}
+				document.write("</table>");
 			}
 		</script>
+		
 	</head>
 	
 	<body>
-	
+		<h3>User Function</h3>
+		<script type="text/javascript">
+			/* 함수 호출 수행 */
+			hello();
+			
+			/* 단 입력 */
+			while(true){
+				start = prompt("시작 단을 입력하세요 : ", );
+				
+				if(start == null) {
+					alert("취소");
+					break;
+				} else if(start == "" ) {
+					alert("단을 입력해주세요");
+				} else if(isNaN(start)) {
+					alert("숫자를 입력해주세요");
+				} else {
+					break;
+				}
+			}
+			
+			while(true){
+				end = prompt("종료 단을 입력하세요 : ", );
+				
+				if(end == null) {
+					alert("취소");
+					break;
+				} else if(end == "") {
+					alert("단을 입력해주세요");
+				} else if(isNaN(end)) {
+					alert("숫자를 입력해주세요");
+				} else {
+					break;
+				}
+			}
+			gugudan(parseInt(start), parseInt(end));
+		</script>
+		
+		
 	</body>
 </html>
