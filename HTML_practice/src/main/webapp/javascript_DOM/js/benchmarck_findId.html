@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Naver Benchmark</title>
+		
+		<script type="text/javascript">
+			/* 윈도우 로드 이벤트 처리 함수 */
+			window.onload = function() {
+				var takeElement = document.getElementById("verify_by_mobile");
+				document.getElementById("verify_by_email").style.visibility = "hidden";
+			}
+			
+			function selectEmail(){
+				document.getElementById("verify_by_email").style.visibility = "visible";
+				document.getElementById("verify_by_mobile").style.visibility = "hidden"
+			}
+			
+			function selectMobile(){
+				document.getElementById("verify_by_email").style.visibility = "hidden";
+				document.getElementById("verify_by_mobile").style.visibility = "visible"
+			}
+		</script>
+	</head>
+	
+	<body>
+		<h3 id="title">아이디 찾기</h3>
+		<form>
+			<input type="radio" name="selectVerificationMethod" value="회원정보에 등록한 휴대전화로 인증" checked="checked" onclick="selectMobile()">회원정보에 등록한 휴대전화로 인증
+			<table align=center id="verify_by_mobile">
+				<tr>
+					<td align=left> 이름 : </td>
+					<th align=left><input type="text" name="name"></th>
+		
+				</tr>
+				
+				<tr>
+					<td align=left>휴대전화 :</td>
+					<th align="center">
+						<select>
+							<option selected>+82</option>
+						</select>
+						<input type="text" name="mobile" value="휴대전화번호" size=12 onclick="value=''" style='color:gray'>
+					</th>
+					<th><input type="button" value="인증번호 받기"></th>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<th align="left"><input type="text" name="verify_num" value="인증번호 6자리 숫자 입력" style='color:gray'></th>
+				</tr>
+			</table>
+			
+			<input type="radio" name="selectVerificationMethod" value="본인확인 이메일로 인증" onclick="selectEmail()">본인확인 이메일로 인증
+			<table align=center id="verify_by_email">
+				<tr>
+					<td align=left> 이름 : </td>
+					<th align=left><input type="text" name="name"></th>
+		
+				</tr>
+				
+				<tr>
+					<td align=left>이메일 주소 :</td>
+					<th align="center">
+						<input type="text" name="email">
+					</th>
+					<th><input type="button" value="인증번호 받기"></th>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<th align="left"><input type="text" name="verify_num" value="인증번호 6자리 숫자 입력" style='color:gray'></th>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
